@@ -1,0 +1,10 @@
+.subscribed {
+  background-color: red;
+  font-size: bold;
+  color: white;
+}
+.unsubscribed {
+  background-color: antiquewhite;
+  font-size: bold;
+  color: white;
+}
