@@ -20,17 +20,17 @@
 // });
 
 //task3
-// const input = document.getElementById("textInput");
-// const ulElement = document.getElementById("ulElement");
-// const form = document.getElementById("form");
+const input = document.getElementById("textInput");
+const ulElement = document.getElementById("ulElement");
+const form = document.getElementById("form");
 
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   const liElement = document.createElement("li");
-//   liElement.textContent = input.value.trim();
-//   ulElement.appendChild(liElement);
-//   input.value = "";
-// });
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const liElement = document.createElement("li");
+  liElement.textContent = input.value.trim();
+  ulElement.appendChild(liElement);
+  input.value = "";
+});
 
 // task4
 // const firstNum = document.getElementById("firstNum");
@@ -66,24 +66,24 @@
 // });
 
 //task 5
-const clickBtn = document.getElementById("clickBtn");
-function getRandomColorBtn() {
-  const red = Math.floor(Math.random() * 256);
-  const green = Math.floor(Math.random() * 256);
-  const blue = Math.floor(Math.random() * 256);
-  return `rgb(${red}, ${green}, ${blue})`;
-}
+// const clickBtn = document.getElementById("clickBtn");
+// function getRandomColorBtn() {
+//   const red = Math.floor(Math.random() * 256);
+//   const green = Math.floor(Math.random() * 256);
+//   const blue = Math.floor(Math.random() * 256);
+//   return `rgb(${red}, ${green}, ${blue})`;
+// }
 
-function getRandomBtn() {
-  return Math.floor(Math.random() * 361) - 180;
-}
+// function getRandomBtn() {
+//   return Math.floor(Math.random() * 361) - 180;
+// }
 
-clickBtn.addEventListener("mouseenter", () => {
-  clickBtn.style.color = getRandomColorBtn();
-});
-clickBtn.addEventListener("mouseleave", () => {
-  clickBtn.style.transform = `rotate(${getRandomBtn()}deg)`;
-});
+// clickBtn.addEventListener("mouseenter", () => {
+//   clickBtn.style.color = getRandomColorBtn();
+// });
+// clickBtn.addEventListener("mouseleave", () => {
+//   clickBtn.style.transform = `rotate(${getRandomBtn()}deg)`;
+// });
 //task
 // const users = [
 //   {

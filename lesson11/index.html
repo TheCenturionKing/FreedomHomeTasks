@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <!-- task.1 -->
+    <!-- <div class="contentBackground">
+      <img
+        id="bgi"
+        class="image imgNature"
+        src="./image/nature.jpg"
+        alt=""
+        onclick="handleImageClick('./image/nature.jpg')"
+      />
+      <img
+        id="bgi"
+        class="image imgDesert"
+        src="./image/desert.jpg"
+        alt=""
+        onclick="handleImageClick('./image/desert.jpg')"
+      />
+      <img
+        id="bgi"
+        class="image imgSpace"
+        src="./image/space.jpg"
+        alt=""
+        onclick="handleImageClick('./image/space.jpg')"
+      />
+    </div> -->
+
+    <!-- task2 -->
+    <h1 style="padding-left: 310px; margin-bottom: 20px; margin-top: 50px">
+      Create ToDo task
+    </h1>
+    <div class="container headerToDo">
+      <input
+        type="text"
+        placeholder="Исполнитель"
+        class="form-control"
+        id="executorInput"
+        required
+        style="width: 400px"
+      />
+      <input
+        type="text"
+        placeholder="Название задачи"
+        type="text"
+        class="form-control"
+        id="taskInput"
+        style="width: 800px"
+        required
+      />
+      <button type="button" class="btn btn-success" id="createTask">
+        Create
+      </button>
+    </div>
+    <div class="container main-table">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Исполнитель</th>
+            <th scope="col">Задача</th>
+            <th scope="col">Статус задачи</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
