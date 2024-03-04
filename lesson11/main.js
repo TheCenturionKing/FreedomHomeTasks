@@ -48,7 +48,7 @@ if (tasks == undefined) {
 
 console.log(tasks);
 
-let btnAnother = ["btn-warning", "btn-danger", "btn-success"];
+let btnAnother = ["btn-warning", "btn-primary", "btn-success"];
 let indexBtnAnother = 0;
 let statuses = ["В ожидании", "Выполняется", "Завершено"];
 const handleButtonClick = (id) => {
@@ -69,6 +69,14 @@ const handleButtonClick = (id) => {
   saveTasksToLocal();
   appendTasksToTable();
 };
+const deleteButtonClick = (index) => {
+  tasks.splice(index, 1);
+  tasks.forEach((task, i) => {
+    task.id = `${i + 1}`;
+  });
+  saveTasksToLocal();
+  appendTasksToTable();
+};
 
 createTask.addEventListener("click", (event) => {
   tasks.push({
@@ -76,6 +84,7 @@ createTask.addEventListener("click", (event) => {
     executor: `${executorInput.value}`,
     task: `${taskInput.value}`,
     status: "В ожидании",
+    delete: "Delete Task",
   });
   saveTasksToLocal();
   appendTasksToTable();
@@ -104,7 +113,7 @@ const appendTasksToTable = () => {
     if (task.status == "В ожидании") {
       statusTask.className = "btn-warning";
     } else if (task.status == "Выполняется") {
-      statusTask.className = "btn-danger";
+      statusTask.className = "btn-primary";
     } else if (task.status == "Завершено") {
       statusTask.className = "btn-success";
     }
@@ -112,7 +121,26 @@ const appendTasksToTable = () => {
     statusTask.id = "statusElement";
     statusTask.type = "button";
     statusTask.onclick = () => handleButtonClick(task.id);
-    tr.append(idElement, executorElement, taskTitleElement, statusTaskTd);
+    const deleteTaskTd = document.createElement("td");
+    const deleteTask = document.createElement("button");
+    deleteTaskTd.append(deleteTask);
+    deleteTask.className = "btn btn-danger";
+    deleteTask.innerText = "Delete Task";
+    deleteTask.type = "button";
+    deleteTask.onclick = function () {
+      let index = Array.from(
+        this.parentElement.parentElement.parentElement.children
+      ).indexOf(this.parentElement.parentElement);
+      deleteButtonClick(index);
+    };
+
+    tr.append(
+      idElement,
+      executorElement,
+      taskTitleElement,
+      statusTaskTd,
+      deleteTaskTd
+    );
     return tr;
   });
   tbody.append(...tableRows);
